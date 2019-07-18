@@ -12,8 +12,8 @@ class Auto{
     init() {
      velocidad = Velocidades(velocidadInicial: Velocidades.Apagado)
     }
-    func cambioDeVelocidad(actual:Int,velocidadEnCadena:String) -> (Int,String) {
-        switch actual{
+    func cambioDeVelocidad() -> (actual : Int,velocidadEnCadenda : String) {
+        switch velocidad.rawValue{
         case 0:
             velocidad = .VelocidadBaja
         case 20:
@@ -33,7 +33,7 @@ var auto=Auto()
 //Prueba de 20 iteraciones
 print("\(auto.velocidad.rawValue), \(auto.velocidad)")
 for _  in 1 ... 20 {
-    let resultado=auto.cambioDeVelocidad(actual: auto.velocidad.rawValue, velocidadEnCadena: "\(auto.velocidad)")
+    let resultado=auto.cambioDeVelocidad()
  print("\(resultado.0),\(resultado.1) ")
 }
 
